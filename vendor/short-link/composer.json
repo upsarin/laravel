@@ -1,0 +1,16 @@
+{
+    "name": "short-link",
+    "description": "Service for create short links",
+    "license": "VKI",
+    "authors": [
+        {
+            "name": "usparin",
+            "email": "mvlad91@mail.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LaravelShort\\ShortLink\\": "src"
+        }
+    }
+}
