@@ -41,7 +41,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Home
                 </a>
-				<a class="navbar-brand" href="{{ url('/short/') }}">
+				<a class="navbar-brand" href="{{ url('/shortlist/') }}">
                     Service
                 </a>
             </div>

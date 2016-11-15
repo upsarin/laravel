@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="container">
-       @include('call-request::link')
+       @include('short-link')
 	</div>
 @endsection

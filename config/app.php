@@ -148,7 +148,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         LaravelNews\CallRequest\ServiceProvider::class,
-		
+		LaravelShort\ShortLink\ServiceProvider::class,
 
         /*
          * Application Service Providers...
