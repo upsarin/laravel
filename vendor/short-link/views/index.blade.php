@@ -1,5 +1,5 @@
- <script src="{{ asset('/vendor/short-link/js/shortlink.js') }}"></script>.
-  <link href="{{ asset('/vendor/short-link/css/shortlink.css') }}" rel='stylesheet' type='text/css'>
+ <script src="{{ asset('/vendor/short-link/js/short-link.js') }}"></script>.
+  <link href="{{ asset('/vendor/short-link/css/short-link.css') }}" rel='stylesheet' type='text/css'>
   
   
 			<div class="panel panel-default">
