@@ -17,8 +17,8 @@ class ShortListController extends Controller
      */
     public function index(ShortList $shortListModel)
     {
-		$title = $shortListModel->get();
-        return view('shortlist', ['title' => $title]);
+		
+        return view('shortlist');
     }
 
     /**
@@ -28,7 +28,7 @@ class ShortListController extends Controller
      */
     public function create(ShortList $shortListModel)
     {
-		 return view('shortlist');
+		 
     }
 
     /**

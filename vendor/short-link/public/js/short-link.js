@@ -38,7 +38,7 @@ $(document).ready(function(){
 					newLi.className = "new_link";
 					newLi.innerHTML = '<td><a href="' + obj.orig_url + '" target="_blank">'  + obj.short_url + '</a></td><td>&nbsp; -- > &nbsp;</td><td>' + obj.orig_url + '</td>';
 					
-					inkList.insertBefore(newLi, linkList.children[0]);
+					linkList.insertBefore(newLi, linkList.children[0]);
 				}
 				
 				
