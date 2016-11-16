@@ -22,9 +22,6 @@ $(document).ready(function(){
 			
 			$.ajax({
 			  url: "http://localhost:8000/short-link/create",
-			  headers: {
-				'X-CSRF-TOKEN': token
-			  },
 			  type: "POST",
 			  data: data,
 			  success: function(html){
