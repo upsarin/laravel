@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<meta name="csrf_token" ="{{ csrf_token() }}" />
     <title>Laravel</title>
 
     <!-- Fonts -->
@@ -28,9 +28,11 @@
 	
 	<!-- JavaScripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="{{ asset('/vendor/short-link/js/short-link.js') }}"></script>.
+   
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="{{ URL::asset('js/js.js') }}"></script>
+	
+	 <script src="{{ asset('/vendor/short-link/js/short-link.js') }}"></script>.
 	
 </head>
 <body id="app-layout">
@@ -42,7 +44,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Home
                 </a>
-				<a class="navbar-brand" href="{{ url('/shortlist/') }}">
+				<a class="navbar-brand" href="{{ route('short_link_create') }}">
                     Service
                 </a>
             </div>
