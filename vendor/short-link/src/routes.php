@@ -4,6 +4,7 @@
 
 Route::group(array('prefix'=>'short-link','namespace' => 'LaravelShort\ShortLink\Controllers','middleware' => ['web']), function() {
 	
+    Route::any('/list/', ['as' => 'short-link','uses' => 'ShortLinkController@index']);
     Route::any('/create/', ['as' => 'short-link-create','uses' => 'ShortLinkController@create']);
 
 

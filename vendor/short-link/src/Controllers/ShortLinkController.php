@@ -9,14 +9,20 @@ class ShortLinkController extends Controller
 	
      public function index(ShortLink $shortlinkModel)
     {
-		
-        return view('short-link::index');
+		$links = $shortlinkModel->getAllLinks();
+        return view('short-link::index', ['links' => $links]);
 	}
 	
     public  function  create(ShortLink $shortlinkModel)
     {
 		$responce = $shortlinkModel->saveLink(Request $request);
-		
+		if(Request::ajax())
+		{
+			echo json_encode($responce);
+		} else {
+			$links = $shortlinkModel->getAllLinks();
+			return view('short-link::index', ['links' => $links, 'message' => $responce['message']]);
+		}
     }
 
 }
