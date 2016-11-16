@@ -6,6 +6,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
 					<h1>{{ $title['title'] }}</h1>
+					@include('call-request::link')
 				</div>
 			</div>
 		</div>

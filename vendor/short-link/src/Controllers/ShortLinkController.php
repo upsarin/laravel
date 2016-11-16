@@ -6,22 +6,17 @@ use LaravelShort\ShortLink\Models\ShortLink;
 
 class ShortLinkController extends Controller
 {
-     public function form(ShortLink $shortlinkModel)
+	
+     public function index(ShortLink $shortlinkModel)
     {
-		$links = $shortlinkModel->getAllLinks();
-        return view('short-link::form', ['links' => $links]);
+		
+        return view('short-link::index');
 	}
 	
     public  function  create(ShortLink $shortlinkModel)
     {
 		$responce = $shortlinkModel->saveLink(Request $request);
-		if(Request::ajax())
-		{
-			echo json_encode($responce);
-		} else {
-			$links = $shortlinkModel->getAllLinks();
-			return view('short-link::form', ['links' => $links, 'message' => $responce['message']]);
-		}
+		
     }
 
 }

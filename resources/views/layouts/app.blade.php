@@ -14,7 +14,8 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
+	
+	<link href="{{ asset('/vendor/short-link/css/short-link.css') }}" rel='stylesheet' type='text/css'>
     <style>
         body {
             font-family: 'Lato';
@@ -27,7 +28,7 @@
 	
 	<!-- JavaScripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-   
+    <script src="{{ asset('/vendor/short-link/js/short-link.js') }}"></script>.
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="{{ URL::asset('js/js.js') }}"></script>
 	

@@ -1,5 +1,4 @@
- <script src="{{ asset('/vendor/short-link/js/short-link.js') }}"></script>.
-  <link href="{{ asset('/vendor/short-link/css/short-link.css') }}" rel='stylesheet' type='text/css'>
+
   
   
 			<div class="panel panel-default">
@@ -12,8 +11,8 @@
                     
 
                     <!-- New Link Form -->
-                    <form action="{{route('short-link-create')}}" method="POST" class="form-horizontal">
-                        {{ csrf_field() }}
+                    <form action="{{ route('short-link-create') }}" method="post" class="form-horizontal" id="shortlinkForm">
+                       <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
 
                         <!-- Link URL -->
                         <div class="form-group">
@@ -34,55 +33,7 @@
                 </div>
             </div>
 			
-			 <!-- Display Validation Errors -->
-			@if ($responce['message'] && $responce['message'] != "")
-				<div id="error_mess" class="alert alert-success">{{ $responce['message'] }}</div>
-			@else
+			
 
 				
-			<div class="panel panel-default">	
-					<div class="panel-heading">
-                        Short Links list
-                    </div>
-				
-                    
-
-                    <div class="panel-body">
-                        <table class="table table-striped task-table">
-                            <thead>
-                                <th>Short Link</th>
-                                <th></th>
-                                <th>Original Link</th>
-                            </thead>
-				@if (count($links) > 0)
-                            <tbody  id="linkList">
-                                @foreach ($links as $link)
-                                    <tr>
-                                        <td>
-                                           <a target="_blank" href="{{ $link->orig_url }}">{{ $link->short_url }}</a>
-                                        </td>
-                                        <td>
-											&nbsp; -- > &nbsp;
-                                        </td>
-										<td>
-											{{ $link->orig_url }}
-                                        </td>
-                                    </tr>
-                                @endforeach
-
-				@else
-									<tr id="noResult"> 
-										<td>
-											No links, sorry, but u will be the first.
-										</td>
-										<td>
-										</td>
-										<td>
-										</td>
-									</tr>
-                @endif
-							</tbody>
-                        </table>
-                    </div>
-			</div>
-</div>	
+			
