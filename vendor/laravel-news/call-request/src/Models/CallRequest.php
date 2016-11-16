@@ -8,4 +8,5 @@ class CallRequest extends Model
 
 	protected $table='shorts';
 	protected $fillable  = ['*'];
+	public $timestamps = false;
 }

@@ -23,29 +23,30 @@ class CallRequestController extends Controller
 				$responce['short_url'] = $links_orig->short_url;
 				$responce['message'] = "We already have that URL";
 				$responce['repeat'] = "Y";
+				
 			} else {
 				
 				$link_array = explode("/", $request->orig_url);
 				
 				if($link_array[0] == "http:" || $link_array[0] == "https:"){
-					$first_post_array = $link_array[0] ."//". $link_array[2] ."/";
+					$first_post_array = $link_array[0] ."//". $link_array[2];
 					$end_post_array = "";
 					
 					foreach($link_array as $key => $val){
 						
 						if($key > 2){
-							$end_post_array .= $val ."/";
+							$end_post_array .= "/". $val;
 						}
 						
 					}
 					
 				} else {
-					$first_post_array = "http://". $link_array[0] ."/";
+					$first_post_array = "http://". $link_array[0];
 					$end_post_array = "";
 					
 					foreach($link_array as $key => $val){
 						if($key != 0){
-							$end_post_array .= $val ."/";
+							$end_post_array .= "/". $val;
 						}
 					}
 				}
@@ -78,7 +79,7 @@ class CallRequestController extends Controller
 				$new_link->short_url = $edit_url;
 				
 				if($new_link->save()){
-					$responce['orig_url'] = $links_orig->orig_url;
+					$responce['orig_url'] = $full_url;
 					$responce['short_url'] = $edit_url;
 					$responce['message'] = 'Successful create another short link';
 					$responce['repeat'] = false;

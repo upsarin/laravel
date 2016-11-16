@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 		if(link == "" || link == "undefined"){
 			$('#error_mess').remove();
-			$('#shortlink').remove();
+			
 			$('#shortlinkForm').append('<div id="error_mess" class="alert alert-success">Please fill in this field the original URL link</div>');
 			setTimeout(function(){
 				$('#error_mess').animate({
@@ -26,9 +26,9 @@ $(document).ready(function(){
 			  data: data,
 			  dataType: 'JSON',
 			  success: function(html){
-				console.log(html);
-				var obj = html;
 				
+				var obj = html;
+				$('#shortlink').remove();
 				$('#shortlinkForm').append('<div id="shortlink" class="">'+ obj.short_url +'</div>');
 				
 				document.getElementById('link_url').value = "";
