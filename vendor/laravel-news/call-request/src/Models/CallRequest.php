@@ -2,8 +2,10 @@
 
 use \Illuminate\Database\Eloquent\Model;
 
+
 class CallRequest extends Model
 {
 
-    public $fillable = ['name', 'phone', 'message', 'time'];
+	protected $table='shorts';
+	protected $fillable  = ['*'];
 }

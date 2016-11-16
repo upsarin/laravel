@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="csrf_token" ="{{ csrf_token() }}" />
+	<meta name="_token" content="{{ csrf_token() }}" />
     <title>Laravel</title>
 
     <!-- Fonts -->
@@ -13,9 +13,10 @@
 
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 	
-	<link href="{{ asset('/vendor/short-link/css/short-link.css') }}" rel='stylesheet' type='text/css'>
+	<link href="{{ asset('/vendor/call-request/css/callrequest.css') }}" rel='stylesheet' type='text/css'>
+    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+
     <style>
         body {
             font-family: 'Lato';
@@ -31,8 +32,8 @@
    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="{{ URL::asset('js/js.js') }}"></script>
-	
-	 <script src="{{ asset('/vendor/short-link/js/short-link.js') }}"></script>.
+	<!-- Package JavaScripts -->
+	<script src="{{ asset('/vendor/call-request/js/callrequest.js') }}"></script>.
 	
 </head>
 <body id="app-layout">
@@ -44,7 +45,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Home
                 </a>
-				<a class="navbar-brand" href="{{ route('short_link_create') }}">
+				<a class="navbar-brand" href="{{ url('/call-request/form') }}">
                     Service
                 </a>
             </div>

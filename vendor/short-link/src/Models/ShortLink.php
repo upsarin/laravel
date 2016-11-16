@@ -4,15 +4,15 @@ use \Illuminate\Database\Eloquent\Model;
 
 class ShortLink extends Model
 {
-	
 	public function getAllLinks()
 	{
-		//
+		$links = Shorts::orderBy('id', 'desc')->get();
+		return $links;
 	}
 	
 	public function saveLink(Request $request)
 	{
-
+			
 			$links_orig = Shorts::orderBy('id', 'desc')
 				->where('orig_url', '=', $request->orig_url)
 				->get();

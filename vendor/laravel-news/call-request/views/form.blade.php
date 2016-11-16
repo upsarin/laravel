@@ -1,35 +1,40 @@
-<div class="_call_request_form">
+@extends('layouts.app')
 
-    @if ($call)
-        <div class="alert alert-success">Спасибо! Мы с Вами свяжемся  в ближайшее время</div>
-    @else
+@section('content')
+    <div class="container">
+  
+  
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				New Link
+			</div>
 
-    <form action="{{route('call_request_form')}}" method="post">
-        <input type="hidden" name="_token" value="{{csrf_token()}}">
-        <div class="form-group">
-            <label for="call_request_name">Ваше имя *</label>
-            <input type="text" class="form-control" id="call_request_name" name="name" placeholder="Ваше имя" required>
-        </div>
-        <div class="form-group">
-            <label for="call_request_phone">Телефон *</label>
-            <input type="text" class="form-control" id="call_request_phone" name="phone" placeholder="Ваш телефон" required>
-        </div>
+			<div class="panel-body">
+				<!-- New Link Form -->
+				<form action="{{route('call_request_create')}}" method="POST" class="form-horizontal" id="shortlinkForm">
+					<input type="hidden" name="_token" value="{{csrf_token()}}">
 
-        <div class="form-group">
-            <label for="call_request_time">Удобное время  для звонка </label>
-            <select class="form-control" name="time" id="call_request_time">
-                <option value="">-- Без разницы</option>
-                <option value="Первая половина дня">Первая половина дня</option>
-                <option value="Вторая половина дня">Вторая половина дня</option>
-            </select>
-        </div>
+					<!-- Link URL -->
+					<div class="form-group">
+						<label for="link_url" class="col-sm-3 control-label">Original Link</label>
 
-        <div class="form-group">
-            <label for="call_request_message">Сообщение</label>
-            <textarea name="message" id="call_request_message"></textarea>
-        </div>
+						<div class="col-sm-6">
+							<input type="text" name="orig_url" id="link_url" class="form-control" value="">
+						</div>
+					</div>
 
-        <input type="submit" value="Отправить" />
-    </form>
-    @endif
-</div>
+					<!-- Add Task Button -->
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-6">
+							<input type="submit" class="btn btn-default" id="submitForm" value="Create Short Link" />
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+@endsection			
+		
+
+				
+			

@@ -1,11 +1,11 @@
 {
     "name": "laravel-news/call-request",
-    "description": "Test call request  package",
+    "description": "Link service based on public package",
     "license": "MIT",
     "authors": [
         {
-            "name": "Vitaly Nikolenko",
-            "email": "vit@laravel-news.ru"
+            "name": "Max",
+            "email": "mvlad91@mail.ru"
         }
     ],
     "autoload": {
