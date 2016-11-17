@@ -6,6 +6,7 @@ Route::group(array('prefix'=>'call-request','namespace' => 'LaravelNews\CallRequ
 
     Route::any('/form', ['as' => 'call_request_form','uses' => 'CallRequestController@form']);
     Route::post('/create', ['as' => 'call_request_create','uses' => 'CallRequestController@create']);
+    Route::get('/link/', ['as' => 'call_request_link','uses' => 'CallRequestController@link']);
 
 
 });

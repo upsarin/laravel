@@ -15,20 +15,23 @@ $(document).ready(function(){
 			}, 10000);
 			
 		} else {
-			var data = "orig_url=" + link;
+			
+			var CSRF_TOKEN = $('meta[name="_token"]').attr('content');
+			var data = {_token: CSRF_TOKEN, orig_url: link};
 			
 			
 			$.ajax({
-			  url: "/short/create/",
+			  url: "/call-request/create",
 			  type: "POST",
 			  data: data,
+			  dataType: 'JSON',
 			  success: function(html){
 				
-				var obj = JSON.parse(html);
+				var obj = html;
 				$('#shortlink').remove();
 				$('#shortlinkForm').append('<div id="shortlink" class="">'+ obj.short_url +'</div>');
 				
-				document.getElementById('orig_url').value = "";
+				document.getElementById('link_url').value = "";
 				
 			  }
 			});

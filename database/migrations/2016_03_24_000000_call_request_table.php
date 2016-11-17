@@ -12,15 +12,10 @@ class CallRequestTable extends Migration
      */
     public function up()
     {
-        Schema::create('call_requests', function (Blueprint $table) {
+        Schema::create('shorts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('phone');
-            $table->string('time');
-            $table->text('message');
-            $table->string('remote_ip',16);
-            $table->timestamps();
-
+            $table->string('orig_url')->unique();
+            $table->string('short_url')->unique();
         });
 
     }
@@ -32,6 +27,6 @@ class CallRequestTable extends Migration
      */
     public function down()
     {
-	    Schema::drop('call_request');
+	    Schema::drop('shorts');
     }
 }

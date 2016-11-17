@@ -17,6 +17,7 @@ class IndexController extends Controller
      */
     public function index(Index $indexModel)
     {
+		
 		$title = $indexModel->get();
         return view('welcome', ['title' => $title]);
     }

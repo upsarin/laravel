@@ -19,8 +19,9 @@ Route::group(['middleware' => ['web']], function () {
     /**
      * Main page
      */
+		
 		Route::get('/', "IndexController@index");
 		
-		Route::get('/shortlist/', "ShortListController@index");
+		
 
 });

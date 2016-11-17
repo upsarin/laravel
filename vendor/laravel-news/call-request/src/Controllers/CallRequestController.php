@@ -96,5 +96,19 @@ class CallRequestController extends Controller
 			return json_encode($responce);
 		
     }
+	
+	public function link(Request $request)
+	{		
+			
+			$url = "http://". $_SERVER['HTTP_HOST'] . $request->url;
+			$links = CallRequest::orderBy('orig_url', 'desc')
+					->where('short_url', '=', $url)
+					->get();
+			if(count($links) > 0){
+				return redirect($links[0]->orig_url);
+			} else {
+				return view('errors.404');
+			}
+	}
 
 }
